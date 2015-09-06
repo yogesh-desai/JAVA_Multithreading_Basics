@@ -1,0 +1,60 @@
+/**
+ *
+ * @author YogeshD
+ Title: To show use of Multi-threading by using Thread class (Extending Thread class)
+ */
+
+class One extends Thread
+{
+    public void run()
+    {
+        System.out.print("You are inside of Class One:");
+        for(int i=1;i<10;i++)
+        {
+            System.out.println("i="+i);
+        }
+        System.out.println("End of Class One");
+    }
+}
+class Two extends Thread
+{
+    public void run()
+    {
+        System.out.print("You are inside of Class Two:");
+        for(int j=1;j<10;j++)
+        {
+            System.out.println("j="+j);
+        }
+        System.out.println("End of Class Two");
+    }
+}
+class Three extends Thread
+{
+    public void run()
+    {
+        System.out.print("You are inside of Class Three:");
+        for(int k=1;k<10;k++)
+        {
+            System.out.println("k="+k);
+        }
+        System.out.println("End of Class Three");
+    }
+}
+public class Multithreading_Basics {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //Newborn State
+        One Thread_One=new One();
+        Two Thread_Two=new Two();
+        Three Thread_Three=new Three();
+    
+        //Runnable State
+        Thread_One.start();
+        Thread_Two.start();
+        Thread_Three.start();
+    }
+}
